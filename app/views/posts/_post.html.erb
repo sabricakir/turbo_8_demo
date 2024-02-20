@@ -11,10 +11,11 @@
 
   <% if action_name != "show" %>
     <div class="flex gap-x-3">
-      <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= link_to "Edit this post", edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-      <%= button_to "Destroy this post", post_path(post), method: :delete, class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+      <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-sky-100 inline-block font-medium" %>
+      <%= link_to "Edit this post", edit_post_path(post), class: "rounded-lg py-3 ml-2 px-5 bg-indigo-100 inline-block font-medium" %>
     </div>
-    <hr class="mt-6">
   <% end %>
 </div>
+<%= button_to "Destroy this post", post_path(post), method: :delete, class: "rounded-lg py-3 mt-2 px-5 bg-red-100 inline-block font-medium" %>
+<hr class="mt-6">
+
