@@ -9,10 +9,19 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <%= turbo_refreshes_with method: :morph, scroll: :preserve  %>
+    <%= content_for :head %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <div class="flex justify-center items-center mt-4 mb-5 text-xl font-bold inline-block">
+      <% if notice.present? %>
+        <p class="bg-green-200 text-green-600 py-2 px-3 rounded-lg" id="notice"><%= notice %></p>
+      <% end %>
+    </div>
+    <main class="container mx-auto mt-28 px-5 flex flex-col gap-y-4">
+      <p class="bg-lime-500 px-2 py-4 rounded-lg text-white"><%= Time.now %></p>
       <%= yield %>
     </main>
   </body>
